@@ -7,7 +7,5 @@ global using FluentValidation;
 global using Microsoft.EntityFrameworkCore;
 global using MyTemplateClean.Application.Exceptions;
 global using Mediator;
-global using Microsoft.Extensions.Logging;
-global using MyTemplateClean.Domain.Events;
 global using MyTemplateClean.Application.Extensions;
 global using MyTemplateClean.BuildingBlocks.Exceptions;
