@@ -9,6 +9,13 @@ public class Todo : Aggregate<TodoId>
 {
     public TodoTitle Title { get; private set; }
     public TodoStatus Status { get; private set; } = TodoStatus.Pending;
+    
+    public DateTime PublishDate { get; private set; } = DateTime.Now;
+    
+    public DateTime CompleteDate { get; private set; } = DateTime.Now;
+    
+    public bool IsDeleted { get; private set; } = false;
+
 
     public static Todo Create(TodoId id, TodoTitle title)
     {
@@ -16,6 +23,7 @@ public class Todo : Aggregate<TodoId>
         {
             Id = id,
             Title = title,
+            PublishDate = DateTime.Now,
             Status = TodoStatus.Pending
         };
         
@@ -26,5 +34,14 @@ public class Todo : Aggregate<TodoId>
     public void Update(TodoStatus status)
     {
         Status = status;
+    }
+    
+    public void Delete()
+    {
+        if (IsDeleted) return; // optional guard
+        IsDeleted = true;
+
+        // Optional: raise domain event
+        AddDomainEvent(new TodoDeletedEvent(this));
     }
 }
