@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.FeatureManagement;
 using MyTemplateClean.BuildingBlocks.Behaviors;
 using Mediator;
+using MyTemplateClean.BuildingBlocks.Messaging.MassTransit;
 
 namespace MyTemplateClean.Application;
 
@@ -17,6 +18,7 @@ public static class DependencyInjection
             k.PipelineBehaviors = [typeof(ValidationBehavior<,>), typeof(LoggingBehavior<,>)];
         });
         services.AddFeatureManagement();
+        services.AddMessageBroker(configuration, Assembly.GetExecutingAssembly());
         return services; 
     }
     

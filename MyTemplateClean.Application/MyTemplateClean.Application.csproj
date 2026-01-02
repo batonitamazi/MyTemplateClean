@@ -7,9 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\MyTemplateClean.BuildingBlocks.Messaging\MyTemplateClean.BuildingBlocks.Messaging.csproj" />
       <ProjectReference Include="..\MyTemplateClean.BuildingBlocks\MyTemplateClean.BuildingBlocks.csproj" />
       <ProjectReference Include="..\MyTemplateClean.Domain\MyTemplateClean.Domain.csproj" />
-      <ProjectReference Include="..\MyTemplateClean.Shared\MyTemplateClean.Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>
