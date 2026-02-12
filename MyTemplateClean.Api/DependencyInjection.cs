@@ -11,8 +11,8 @@ public static class DependencyInjection
         services.AddExceptionHandler<CustomExceptionHandler>();
         var withApiVersioning = services.AddApiVersioning();
 
-        services.AddHealthChecks()
-            .AddSqlServer(configuration.GetConnectionString("Database")!);
+        // services.AddHealthChecks()
+        //     .AddSqlServer(configuration.GetConnectionString("Database")!);
         return services;
     }
 

@@ -29,7 +29,7 @@ todos.MapTodosApiV1();
 
 if(app.Environment.IsDevelopment())
 {
-    await app.InitialiseDatabaseAsync();
+    // await app.InitialiseDatabaseAsync();
 }
 
 app.Run();
